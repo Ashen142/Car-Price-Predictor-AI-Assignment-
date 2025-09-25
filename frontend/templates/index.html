@@ -1,0 +1,150 @@
+
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Car Price Predictor</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+  <header>
+    <h1>Vehicle Price Predictor</h1>
+    <p>Enter your vehicle details and get an instant price estimate</p>
+  </header>
+  <br><br>
+ 
+    <form action="/" method="POST">
+      
+      <!-- Car Brand -->
+      <label for="brand">Car Brand:</label>
+      <select name="brand" required>
+        <option value="">Select Brand</option>
+        <option value="maruti">Maruti</option>
+        <option value="skoda">Skoda</option>
+        <option value="honda">Honda</option>
+        <option value="hyundai">Hyundai</option>
+        <option value="toyota">Toyota</option>
+        <option value="ford">Ford</option>
+        <option value="renault">Renault</option>
+        <option value="mahindra">Mahindra</option>
+        <option value="tata">Tata</option>
+        <option value="chevrolet">Chevrolet</option>
+        <option value="datsun">Datsun</option>
+        <option value="jeep">Jeep</option>
+        <option value="benz">Mercedes-Benz</option>
+        <option value="mitsubishi">Mitsubishi</option>
+        <option value="audi">Audi</option>
+        <option value="volkswagen">Volkswagen</option>
+        <option value="bmw">BMW</option>
+        <option value="nissan">Nissan</option>
+        <option value="lexus">Lexus</option>
+        <option value="jaguar">Jaguar</option>
+        <option value="land rover">Land Rover</option>
+        <option value="mg">MG</option>
+        <option value="volvo">Volvo</option>
+        <option value="daewoo">Daewoo</option>
+        <option value="kia">Kia</option>
+        <option value="fiat">Fiat</option>
+        <option value="force">Force</option>
+        <option value="ambassador">Ambassador</option>
+        <option value="ashok">Ashok</option>
+        <option value="isuzu">Isuzu</option>
+        <option value="opel">Opel</option>
+      </select>
+
+      <!-- Year -->
+      <label for="year">Year:</label>
+      <input type="number" name="year" min="1990" max="2025" required>
+
+      <!-- Kilometers Driven -->
+      <label for="kms">Kilometers Driven:</label>
+      <input type="number" name="kms" min="20" max="200000" required>
+
+      <!-- Fuel Type -->
+      <label for="fuel">Fuel Type:</label>
+      <select name="fuel" required>
+        <option value="diesel">Diesel</option>
+        <option value="petrol">Petrol</option>
+        <option value="lpg">LPG</option>
+        <option value="cng">CNG</option>
+      </select>
+
+      <!-- Seller Type -->
+      <label for="seller">Seller Type:</label>
+      <select name="seller" required>
+        <option value="individual">Individual</option>
+        <option value="dealer">Dealer</option>
+        <option value="trustmark D">Trustmark Dealer</option>
+      </select>
+
+      <!-- Transmission -->
+      <label for="transmission">Transmission:</label>
+      <select name="transmission" required>
+        <option value="manual">Manual</option>
+        <option value="automatic">Automatic</option>
+      </select>
+
+      <!-- Owner -->
+      <label for="owner">Owner:</label>
+      <select name="owner" required>
+        <option value="first owner">First Owner</option>
+        <option value="second owner">Second Owner</option>
+        <option value="third owner">Third Owner</option>
+        <option value="above owner">Fourth & Above Owner</option>
+        <option value="test drive car">Test Drive Car</option>
+      </select>
+
+      <!-- Mileage -->
+      <label for="mileage">Mileage (km/l):</label>
+      <input type="number" name="mileage" step="0.1" min="10" max="40" required>
+
+      <!-- Engine -->
+      <label for="engine">Engine (CC):</label>
+      <input type="number" name="engine" min="700" max="5000" required>
+
+      <!-- Max Power -->
+      <label for="power">Max Power (bhp):</label>
+      <input type="number" name="power" step="0.1" min="0" max="200" required>
+
+      <!-- Seats -->
+      <label for="seats">Seats:</label>
+      <input type="number" name="seats" min="4" max="15" required>
+
+
+      <!-- Currency -->
+<label for="currency">Currency:</label>
+<select name="currency" required>
+  <option value="lkr">LKR</option>
+  <option value="inr">INR</option>
+  <option value="usd">USD</option>
+</select>
+
+
+      <!-- Submit -->
+      <button type="submit">Predict Price</button>
+    </form>
+
+     <footer>
+    <p>© 2025 Vehicle Predictor. All rights reserved.</p>
+  </footer>
+
+  <div class="result">
+ {% if prediction %}
+  <h2 style="color: rgb(66, 14, 46);">
+    Predicted Car Price: {{ currency }} {{ "{:,.2f}".format(prediction) }}
+  </h2>
+{% endif %}
+
+  </div>
+  <div class="error">
+        <!-- Show Error -->
+        {% if error %}
+            <h3 style="color: red;">{{ error }}</h3>
+        {% endif %}
+        </div>
+  </div>
+</body>
+</html>
+
+
