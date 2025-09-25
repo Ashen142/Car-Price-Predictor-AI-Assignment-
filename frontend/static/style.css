@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url('/static/car.avif');
+ 
+    background-repeat: no-repeat;
+  background-size:cover;
+  background-position: center;
+  opacity: 10px;
+  color: #333;
+opacity: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+header {
+  background-color: #45be4f;
+  color: rgb(15, 15, 15);
+  padding: 40px 20px;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 2.5em;
+}
+
+header p {
+  font-size: 1.2em;
+}
+
+
+
+/* Container */
+.container {
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(8, 8, 8, 0.2);
+  width: 1000px;
+  
+}
+
+/* Title */
+.container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #0b0b0b;
+}
+
+/* Labels */
+form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #0a0a0a;
+  margin-left: 140px;
+}
+
+/* Inputs and selects */
+form input[type="number"],
+form select {
+  width: 400px;
+  padding: 10px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color 0.3s;
+  margin-left: 130px;
+  
+}
+
+form input[type="number"]:focus,
+form select:focus {
+  border-color: #0f0e0e;
+  outline: none;
+}
+
+/* Submit Button */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #0dea95;
+  color: rgb(10, 9, 9);
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #6d0571;
+}
+
+/* Prediction result */
+.result {
+  margin-top: 25px;
+  padding: 15px;
+  background-color: #e0f7e9;
+  border-left: 5px solid #7a06a4;
+  color: #2c3e50;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 6px;
+}
+
+footer {
+  margin-top: auto;
+  padding: 20px;
+  text-align: center;
+  color: #777;
+  font-size: 0.9em;
+}
